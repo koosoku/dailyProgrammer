@@ -12,11 +12,11 @@ public class destringifcation {
 		input = input.substring(1,input.length()-1);
 		for(int i=0; i<input.length();i++){
 			if (input.charAt(i) == '\\'){
+				//this part doesn't work
 				if(input.charAt(i+1) == '"'){
-					//input = input.substring(0,i) + input.substring(i+1, input.length());
-					input = input.replaceFirst("\\", "");
+					input = input.substring(0,i) + input.substring(i+1, input.length());
 				}
-				if(input.charAt(i+1)=='n'){
+				else if(input.charAt(i+1)=='n'){
 					input = input.substring(0,i) + "\n" + input.substring(i+2, input.length());
 				}
 				else{

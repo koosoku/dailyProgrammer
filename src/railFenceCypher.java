@@ -1,7 +1,7 @@
 public class railFenceCypher {
 	public static void main(String[] args){
-		String input = "1234567891234";
-		encode(3,input);
+		String input = "123456789123456789";
+		encode(5,input);
 	}
 	public static String encode(int rows, String message){
 		String[] rowCode = new String[rows];
@@ -14,10 +14,10 @@ public class railFenceCypher {
 			for(int j=1; j<rows-1; j++){
 				if(i+j< message.length())
 					rowCode[j] += message.charAt(i+j);
-				if(i+j+(rows-2)*2< message.length())
-					rowCode[j] +=message.charAt(i+j+(rows-2)*2);  
+				if(i+j+(rows-1-j)*2< message.length())
+					rowCode[j] +=message.charAt(i+j+(rows-1-j)*2);  
 			}
-			if(i+rows<message.length())
+			if(i+rows<=message.length())
 				rowCode[rows-1] +=message.charAt(i+rows-1);
 		}
 		

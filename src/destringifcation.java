@@ -12,7 +12,6 @@ public class destringifcation {
 		input = input.substring(1,input.length()-1);
 		for(int i=0; i<input.length();i++){
 			if (input.charAt(i) == '\\'){
-				//this part doesn't work
 				if(input.charAt(i+1) == '"'){
 					input = input.substring(0,i) + input.substring(i+1, input.length());
 				}
